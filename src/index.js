@@ -28,10 +28,23 @@ connection.connect((err) => {
     // })
 
     // INSERT INTO TABLE
-    var q = "INSERT INTO customers (name, address) VALUES ('Arun Inc', 'Law Gate')";
-    connection.query(q, (err, res) => {
+    // var q = "INSERT INTO customers (name, address) VALUES ('Arun Inc', 'Law Gate')";
+    // connection.query(q, (err, res) => {
+    //     if (err) throw err;
+    //     console.log("1 Record inserted")
+    // })
+
+    //  INSERT MULTIPLE VALUES INTO TABLE
+    var q = "INSERT INTO customers (name, address) VALUES ?";
+    var values = [
+        ['Tarun', 'NCR'],
+        ['Mukul', 'Aligarh'],
+        ['Vikas', 'Bewadi'],
+        ['Appu', 'Bihar'],
+    ]
+    connection.query(q, [values], (err, res) => {
         if (err) throw err;
-        console.log("1 Record inserted")
+        console.log(values.length, "is inserted")
     })
 
 
