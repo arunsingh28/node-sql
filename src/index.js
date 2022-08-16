@@ -48,8 +48,9 @@ connection.connect((err) => {
     // })
 
     // SHOW ALL DATA FROM TABLE
-    sqlQuery.show_all('customers')
+    // sqlQuery.show_all('customers')
 
+    sqlQuery.show_col('customers', 'name')
 
 
 })
