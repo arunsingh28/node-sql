@@ -21,12 +21,18 @@ connection.connect((err) => {
     // })
 
     // ALTER TABLE
-    var q = "ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY";
-    connection.query(q, (err, res) => {
-        if (err) console.log(console.message)
-        else console.log('Table ALTER');
-    })
+    // var q = "ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY";
+    // connection.query(q, (err, res) => {
+    //     if (err) console.log(console.message)
+    //     else console.log('Table ALTER');
+    // })
 
+    // INSERT INTO TABLE
+    var q = "INSERT INTO customers (name, address) VALUES ('Arun Inc', 'Law Gate')";
+    connection.query(q, (err, res) => {
+        if (err) throw err;
+        console.log("1 Record inserted")
+    })
 
 
 
