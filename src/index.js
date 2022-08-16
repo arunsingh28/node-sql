@@ -14,11 +14,19 @@ connection.connect((err) => {
 
     global.conn = connection
     //  CREATE TABLE
-    var q = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+    // var q = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+    // connection.query(q, (err, res) => {
+    //     if (err) console.log(console.message)
+    //     else console.log('Table created');
+    // })
+
+    // ALTER TABLE
+    var q = "ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY";
     connection.query(q, (err, res) => {
         if (err) console.log(console.message)
-        else console.log('Table created');
+        else console.log('Table ALTER');
     })
+
 
 
 
