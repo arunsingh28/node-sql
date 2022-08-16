@@ -35,17 +35,20 @@ connection.connect((err) => {
     // })
 
     //  INSERT MULTIPLE VALUES INTO TABLE
-    var q = "INSERT INTO customers (name, address) VALUES ?";
-    var values = [
-        ['demo', 'NCR'],
-        ['Mukul', 'Aligarh'],
-        ['Vikas', 'Bewadi'],
-        ['Appu', 'Bihar'],
-    ]
-    connection.query(q, [values], (err, res) => {
-        if (err) throw err;
-        console.log(values.length, "is inserted", res)
-    })
+    // var q = "INSERT INTO customers (name, address) VALUES ?";
+    // var values = [
+    //     ['demo', 'NCR'],
+    //     ['Mukul', 'Aligarh'],
+    //     ['Vikas', 'Bewadi'],
+    //     ['Appu', 'Bihar'],
+    // ]
+    // connection.query(q, [values], (err, res) => {
+    //     if (err) throw err;
+    //     console.log(values.length, "is inserted", res)
+    // })
+
+    // SHOW ALL DATA FROM TABLE
+    sqlQuery.show_all('customers')
 
 
 
