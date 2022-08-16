@@ -1,20 +1,27 @@
 const sql = require('mysql')
-const { create_db } = require('./sql.orm')
+const sqlQuery = require('./sql.orm')
 const connection = sql.createConnection({
     host: "localhost",
     user: "root",
-    password: ""
+    password: "",
+    database: 'demo1'
 })
 
 
 connection.connect((err) => {
     if (err) throw err.message
-    console.log('Connected !')
+    console.log('DB Connected !')
 
-    connection.query("CREATE DATABASE demo1", (err, res) => {
-        if (err) throw err.message;
-        console.log("Database created.")
+    global.conn = connection
+    //  CREATE TABLE
+    var q = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+    connection.query(q, (err, res) => {
+        if (err) console.log(console.message)
+        else console.log('Table created');
     })
+
+
+
 })
 
 process.on('unhandledRejection', (reason, p) => {
