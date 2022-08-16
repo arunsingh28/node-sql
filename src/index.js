@@ -37,14 +37,14 @@ connection.connect((err) => {
     //  INSERT MULTIPLE VALUES INTO TABLE
     var q = "INSERT INTO customers (name, address) VALUES ?";
     var values = [
-        ['Tarun', 'NCR'],
+        ['demo', 'NCR'],
         ['Mukul', 'Aligarh'],
         ['Vikas', 'Bewadi'],
         ['Appu', 'Bihar'],
     ]
     connection.query(q, [values], (err, res) => {
         if (err) throw err;
-        console.log(values.length, "is inserted")
+        console.log(values.length, "is inserted", res)
     })
 
 
