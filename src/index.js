@@ -8,7 +8,7 @@ const connection = sql.createConnection({
 })
 
 
-connection.connect((err) => {
+connection.connect(async (err) => {
     if (err) throw err.message
     console.log('DB Connected !')
 
@@ -28,7 +28,7 @@ connection.connect((err) => {
     // })
 
     // INSERT INTO TABLE
-    // var q = "INSERT INTO customers (name, address) VALUES ('Arun Inc', 'Law Gate')";
+    // var q = "INSERT INTO customers (name, address) VALUES ('Mini Ghunsar', 'Ambala Cantt')";
     // connection.query(q, (err, res) => {
     //     if (err) throw err;
     //     console.log("1 Record inserted")
@@ -50,7 +50,22 @@ connection.connect((err) => {
     // SHOW ALL DATA FROM TABLE
     // sqlQuery.show_all('customers')
 
-    sqlQuery.show_col('customers', 'name')
+    // SHOW DATA WITH NAME OR ADDRESS
+    // sqlQuery.show_col('customers', 'name')
+
+    // SHOW DATA FROM ID
+
+    // sqlQuery.findById('customers', 'name', 'mini ghunsar')
+    // console.log('Name:', await arun)
+
+
+    // FIND WITH LIKE
+    var q = "SELECT * FROM customers WHERE address LIKE 'a%'";
+    connection.query(q, (err, res) => {
+        if (err) throw err;
+        console.log(res)
+    })
+
 
 
 })
